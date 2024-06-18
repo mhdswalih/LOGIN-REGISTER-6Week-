@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/css/adminpage.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div class="container">
+        <h2 style="color: aliceblue;">User Management</h2>
+        <div class="search-container">
+            <form action="/admin/dashboard" method="get">
+                <input type="text" name="search" class="search-input" placeholder="Search user..." value="<%= search ?? '' %>">
+                <i></i>
+                <button type="submit" class="search-btn">Search</button>
+            </form>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Full Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Action</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="table">
+                <% if(users.length > 0) { users.forEach(user => { %>
+                <tr>
+                    <td><%= user.name %></td>
+                    <td><%= user.email %></td>
+                    <td><%= user.phone %></td>
+                    <td><a href="/admin/editUser?userId=<%= user._id %>" class="btn">Edit</a></td>
+                    <td><a href="#" data-user-id="<%= user._id %>" class="btn delete-btn">Delete</a></td> 
+                </tr>
+                <% }); } else { %>
+                <tr>
+                    <td colspan="5" class="text-center">No users found</td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+        <a href="/admin/logout" onclick="confirmLogout(event)" class="add-user-btn">Logout</a>
+        <a href="/admin/adduser" class="add-user-btn">Add User</a>
+    </div>
+    <script src="/script/dashboard.js"></script>
+</body>
+</html>

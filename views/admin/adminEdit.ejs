@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="/css/userEdit.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>adminEdit page</title>
+</head>
+<body>
+    <body>
+        <div class="box">
+          <form action="" id="userEdit" data-user-id="<%= user._id %>">
+            <h2>EDIT PROFILE</h2>
+            <div class="inputBox">
+                <input id="name" type="username"  name="name" required="required" value="<%= user.name %>">
+                <input type="hidden"  value="<%= user._id %>" name="id">
+                <span>Name</span>
+                <i></i>
+              </div>
+              <div class="inputBox">
+              <input id="email" type="email"  name="email" required="required" value="<%= user.email %>">
+              <span>Email</span>
+              <i></i>
+              </div>
+              <div class="inputBox">
+                <input  id="phone" type="phone" name="phone" required="required" value="<%= user.phone %>">
+                <span>Phone</span>
+                <i></i>
+                </div>
+                <span id="submit-error" style="color: red;margin-top: 10px;"></span>
+                <div class="inputBox">
+                  <input type="submit" value="Submit">
+                  </div>
+                <script src="/script/admin-edit.js">
+                  
+                </script>
+      </body>
+
+      
+      </html>
+</body>
+</html>
+
+

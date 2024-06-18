@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/css/home.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign page</title>
+</head>
+<body>
+    <body>
+        <div class="box">
+          <form action="/logout" >
+            <h2></h2>
+            <div class="inputBox">
+           <div class="mb-4">
+            <table class="userTable">
+              <tbody>
+                <tr>
+                  <th scope="row">Name  :</th>
+                  <td><%= user.name %></td>
+                </tr>
+                <tr>
+                  <th scope="row">Email  :</th>
+                  <td><%=user.email %></td>
+                </tr>
+                <tr>
+                  <th scope="row">Mobile   :</th>
+                  <td><%=user.phone %></td>
+                </tr>
+              </tbody>
+            </table>
+           </div>
+            <input type="submit" value="LOGOUT">
+            <a href="/edit-profile" class="adm" >Edit</a>
+          </form>
+      </body>
+      
+      </html>
+</body>
+</html>
+
+
